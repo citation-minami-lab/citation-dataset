@@ -37,7 +37,7 @@ with open("../../../../ex_data/axcell_list") as load_file:
     for line in lines:
         axcell_exist_list.append(line.replace('\n', ''))
 
-start_index = int(input('Input start index (default = 0) : '))
+start_index = int(input('Input start index (If you want default enter 0) : '))
 for link in tqdm(links[start_index:]):
     name = link.split('/')[-1]
     url = "http://export.arxiv.org/e-print/" + name

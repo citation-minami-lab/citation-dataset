@@ -8,14 +8,13 @@ import time
 
 
 axcell_src_path = pathlib.Path('../mount/unpacked_sources')
-#citation_path = '../table/id_citation_title'
-citation_path = '../ex_data/table.csv'
+citation_path = '../table/id_citation_title'
+#citation_path = '../ex_data/table.csv'
 axcell_folders = axcell_src_path.iterdir()
 context_related_path = '../dataset/axcell_data/'
 arxiv_request_path = '../dataset/arxiv_data/'
 # axcell_folderでループ
 
-'''
 for axcell_folder in tqdm(axcell_folders):
     #if i > 10:
     #    break
@@ -34,14 +33,11 @@ for axcell_folder in tqdm(axcell_folders):
         with open(citation_path, 'a') as id_citation_title:
             for citation in result_dict:
                 id_citation_title.write(axcell_folder.name + ' , ' + citation + ' , ' + result_dict[citation] + '\n')
-'''
 
-'''
 context_related_pathlib = pathlib.Path(context_related_path)
 related_texs = context_related_pathlib.iterdir()
 for child_folder in tqdm(related_texs):
     result = create_split.split_tex_text(context_related_path + child_folder.name)
-'''
 
 with open(citation_path) as id_citation_title_path:
     lines = id_citation_title_path.readlines()
